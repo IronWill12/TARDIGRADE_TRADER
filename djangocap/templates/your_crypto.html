@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Crypto</title>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h1> Your Crypto Portfolio</h1>
+<br/>
+<br/>
+      <form action="{% url 'your_crypto' %}" class="d-flex" method ="POST">
+          {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Enter ticker to add:" aria-label="Search"
+        name = "crypto_ticker">
+        <button class="btn btn-outline-success" type="submit">Add</button>
+      </form><br/>
+
+<table class="table table- table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+         <th scope="col">Symbol</th>
+        <th scope="col">Value</th>
+        <th scope="col">24hr High</th>
+        <th scope="col">24hr Low</th>
+        <th scope="col">Set Buy Price</th>
+        <th scope="col">Set Sell Price</th>
+        <th scope="col">REMOVE</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if ticker %}
+
+
+      {% for list_item in output %}
+          <tr>
+        <th scope="row">{{ list_item.RAW.FROMSYMBOL }}</th>
+          <td>{{ list_item.DISPLAY.PRICE }}</td>
+          <td>{{ list_item.DISPLAY.HIGH24HOUR }}</td>
+          <td>{{ list_item.DISPLAY.LOW24HOUR }}</td>
+          <td>buy price</td>
+          <td>sell price</td>
+          <td><a href="/">
+    REMOVE </a><br/></td>
+          <tr/>
+      {% endfor %}
+      </tr>
+
+
+
+  <thead class="table-dark">
+    <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Value</th>
+        <th scope="col">24hr High</th>
+        <th scope="col">24hr Low</th>
+        <th scope="col">Set Buy Price</th>
+        <th scope="col">Set Sell Price</th>
+        <th scope="col">REMOVE</th>
+</tfoot>
+{% endif %}
+    </tbody>
+</table>
+
+<br/>
+
+</body>
+{% endblock %}
+</html>

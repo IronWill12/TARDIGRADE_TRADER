@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TARDIGRADE TRADER</title>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h1>This is my app</h1>
+<br/>
+<br/>
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+
+{% if api %}
+    {% if api == "error1" %}
+        There was an error with your entry, please try again.
+    {% else %}
+        <H1> {{ api.RAW.FROMSYMBOL }} </H1>
+        {{ api.DISPLAY.FROMSYMBOL }} current price (USD): {{ api.DISPLAY.PRICE }}<br>
+        Past 24 hour high: {{ api.DISPLAY.HIGH24HOUR }}<br>
+        Past 24 hour low: {{ api.DISPLAY.LOW24HOUR }}<br>
+
+    {% endif %}
+{% else %}
+    do something else
+{% endif %}
+
+</body>
+{% endblock %}
+</html>
