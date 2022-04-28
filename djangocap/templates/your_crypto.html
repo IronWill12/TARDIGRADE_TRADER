@@ -7,14 +7,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
-<h1> Your Crypto Portfolio</h1>
+<h1 style="color:lavenderblush; font-family: 'DejaVu Sans'">Your Crypto Portfolio</h1>
 <br/>
 <br/>
       <form action="{% url 'your_crypto' %}" class="d-flex" method ="POST">
           {% csrf_token %}
         <input class="form-control me-2" type="search" placeholder="Enter ticker to add:" aria-label="Search"
         name = "crypto_ticker">
-        <button class="btn btn-outline-success" type="submit">Add</button>
+        <button class="btn btn-outline-light" type="submit">Add</button>
       </form><br/>
 
 <table class="table table- table-striped table-bordered table-hover">
@@ -41,12 +41,12 @@
           <td>{{ list_item.DISPLAY.LOW24HOUR }}</td>
           <td>buy price</td>
           <td>sell price</td>
-          <td><a href="/">
+          <td><a href="/delete/{{ list_item.pk }}"style="color:whitesmoke""> <!--function not working-->
     REMOVE </a><br/></td>
           <tr/>
       {% endfor %}
       </tr>
-
+  </tbody>
 
 
   <thead class="table-dark">

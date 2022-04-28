@@ -2,8 +2,6 @@
 <html lang="en">
 <!doctype html>
 <html lang="en">
-{% load static %}
-
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,8 +12,7 @@
 <style>
     .navbar-tar {
         background-color: #006666;
-        height: 120px;
-        box-shadow: 9px 2px 5px #777777;
+        height: 117px;
 
     }
     .nav-link {
@@ -36,23 +33,6 @@
         bg-color: #8c3248;
         font-family: "DejaVu Sans";
 
-
-    }
-    .logo{
-        border-radius: 50%;
-        height: 112px;
-        width: 112px;
-        border: 12px solid #8c3248;
-        box-shadow: 5px 2px 5px #777777;
-    }
-    .nav-item{
-        padding-left: 25px;
-    }
-    p{
-        font-weight: bold;
-    }
-    .foot-txt{
-        font-weight: bolder;
     }
 </style>
     <title>TARDIGRADER TRADER</title>
@@ -61,26 +41,20 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-tar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url "home" %}"><img src="{% static 'images/logo.png' %}"  class="logo"></a>
+    <a class="navbar-brand" href="{% url "home" %}">Tardigrade Trader</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!--<li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>-->
-          <li class="nav-item">
-          <a class="nav-link" href="{% url "login" %}"style="color:lavenderblush">LOGIN</a>
-          </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url "your_crypto" %}"style="color:lavenderblush">YOUR CRYPTO</a>
-            <li class="nav-item">
-          <a class="nav-link" href="{% url "aboutme" %}"style="color:lavenderblush">ABOUT ME</a>
-
-
-
-      </li>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "aboutme" %}">About Me</a>
+             <li class="nav-item">
+          <a class="nav-link" href="{% url "your_crypto" %}">Your Crypto</a>
+        </li>
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -110,9 +84,7 @@
     {% if messages %}
   {% for message in messages %}
   <div class="alert alert-success alert-dismissible" role="alert">
-      <button class="btn-close" data-dismiss="alert" data-bs-dismiss="alert"
->
-
+      <button class="close" data-dismiss="alert">
           <small><sup>x</sup></small>
       </button>
         {{ message }}
@@ -142,36 +114,31 @@
 
 
 <br/><br/>
-<footer class="foot-tar text-center text-lg-start ">
-
+<footer class="foot-tar text-center text-lg-start">
   <!-- Grid container -->
   <div class="container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="foot-txt text-uppercase">What is a Cryptocurrency?</h5>
+        <h5 class="foot-txt text-uppercase">Footer text</h5>
 
         <p>
-            A cryptocurrency is a virtual currency that is secured by cryptography, which makes it nearly impossible to counterfeit or double-
-            spend. Many cryptocurrencies are decentralized networks based on
-            blockchain technology. A defining feature of cryptocurrencies is that
-            they are generally not issued by any central authority, rendering
-            them theoretically immune to government interference or manipulation.<a href="https://www.coinbase.com/learn/crypto-basics/plp-what-is-cryptocurrency?utm_source=google_search_nb&utm_medium=cpc&utm_campaign=11552175024&utm_content=113244325352&utm_term=crypto%20explained&utm_creative=478113585825&utm_device=c&utm_placement=&utm_network=g&utm_location=1026969&gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF5Jet0uXcH0N0feKTr2TJ9nqb1SOgWF4UVEBrP1HnndEK5DTFy06jQaAvgZEALw_wcB"style="color:whitesmoke">More information.</a>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+          aliquam voluptatem veniam, est atque cumque eum delectus sint!
         </p>
       </div>
       <!--Grid column-->
 
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="foot-txt text-uppercase">What is a Tardigade?</h5>
+        <h5 class="text-uppercase">Footer text</h5>
 
         <p>
-            Tardigrades are the smallest and stongest animals known on our planet.
-            They can live up to a decade with know food or water, they can also
-            survive the vacuum of space. Making them the epitome of small, yet strong. More about these animals can be found
-<a href="https://www.livescience.com/61974-why-tardigrades-are-awesome.html"style="color:whitesmoke">HERE.</a>
-
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+          aliquam voluptatem veniam, est atque cumque eum delectus sint!
         </p>
       </div>
       <!--Grid column-->

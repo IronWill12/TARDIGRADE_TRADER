@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>About Me</title>
 </head>
-{% extends 'base.html' %}
 {% block content %}
+    <style>
+        .profile{
+        border: 2px ridge #8c3248;
+        box-shadow: 5px 2px 5px #777777;
+            margin-right: 25px;
+    }
+        h2{
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        #flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+            .opengraph {
+        text-align: center;
+        font-weight: bold;
+    }
+    </style>
 <body>
-<h1> About Me, information and such</h1>
+<h1 style="font-weight: bolder"> Dustin Rainer Olsen</h1>
+<div id="flex-container">
+
+    <img src="{% static 'images/profile.png' %}" class="profile">
+    <div>
+
+        <h2>
+            Hello, thanks for stopping by.
+        </h2>
+        <br/>
+
+        <p class="opengraph">This application was created by me for my capstone project at <a href="https://pdxcodeguild.com/prospective-students/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF6VrWTQgX-znt_KIOTwSnqRAafbWFPoXSkd_Zv7D_9hkQdpZIxoNPcaAlFsEALw_wcB"style="color:lightgrey">PDX Code Guild.</a> It has been a great experience
+            learning everything about Python, Django, Javascript and more. I am so excited to kickstart my tech career
+            and am currently looking for any and all work and experiences in the tech industry. Previously to attending the Code Guild I was
+            in the United States military for 12 years. I know how to work hard and take pride in my attention to detail.
+            I also know when to take a break, I am an avid photographer and outdoors junkie. I am currently based in Utah where I live
+            with my partner, my daughter, two cats and a dog. We have a full house but that's the way we like it.
+        </p>
+        <br/><br/><br/>
+        <h2>
+            Contact Me: Ironwill127@yahoo.com
+        </h2>
+     </div>
+
+</div>
+
 </body>
 {% endblock %}
 </html>

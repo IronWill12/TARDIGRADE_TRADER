@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from .models import Crypto
 from django.contrib import messages
@@ -43,24 +43,43 @@ def your_crypto (request):
           form = CryptoForm(request.POST or None)
           if form.is_valid():
                form.save()
-               messages.success(request, ("The Crypto Has Been Added To Your Portfolio!"))
+               #messages.success(request, ("The Crypto Has Been Added To Your Portfolio!"))
                return redirect('your_crypto')
+          else:
+               messages.success(request, ("The Ticker was Invalid please try again. "))
+               return redirect('your_crypto')
+          return ... # some httpresponse
      else:
           ticker = Crypto.objects.all()
           output = []
           for ticker_item in ticker:
                api_request = requests.get(
                "https://min-api.cryptocompare.com/data/generateAvg?fsym=" + str(ticker_item) + "&tsym=USD&e=Kraken")
-
+               #api_request.encoding="utf-8"
+               #print(api_request.content)
+               #print("here")
                try:
-                    api = api_request.json()  # json.loads(api_request.content.raw)
-                    output.append(api)
+                    api = json.loads(api_request.content)
+                    api['pk'] = ticker_item.pk  # json.loads(api_request.content.raw)
+
+                    # print(api['Response'])
+                    print()
+                    print(ticker_item)
+                    if api.get('Response') == 'Error':
+                        print('work?!?!?!')
+                        ticker_item.delete()
+                        messages.success(request, ("The Ticker was Invalid please try again. "))
+                    else:
+                         output.append(api)
+
                except Exception as e:
+                    # print('the exception ran for ', ticker_item)
+                    # ticker_item.delete()
                     api = "error1"
           return render (request, 'your_crypto.html', {'ticker': ticker, 'output': output})
 
-def delete(request, crypto_id):
-     item = Crypto.objects.get(pk=crypto_id)
+def delete(request, pk):
+     item = get_object_or_404(Crypto, pk=pk)
      item.delete()
      messages.success(request, ("The Crypto Has Been Removed From Your Portfolio!"))
      return redirect(your_crypto)

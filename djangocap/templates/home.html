@@ -6,10 +6,58 @@
 </head>
 {% extends 'base.html' %}
 {% block content %}
+    {% load static %}
 <body>
-<h1>This is my app</h1>
+<style>
+    h1 {
+    text-align:center;
+        font-size: xxx-large;
+        font-family: "Gill Sans Ultra Bold";
+        font-weight: bolder;
+        text-decoration: underline;
+}
+    h2 {
+    text-align:center;
+        font-size: x-large;
+}
+    .opengraph {
+        text-align: left;
+        font-weight: bold;
+    }
+            #flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+            .pic {
+                border: 2px ridge #8c3248;
+                box-shadow: 5px 2px 5px #777777;
+                margin-right: 25px;
+                height: 212px;
+                width: 212px;
+                margin: 75px;
+            }
+</style>
+<h1>TARDIGRADE TRADER</h1>
+<h2> Small Trades Lead To Big Gains </h2>
 <br/>
 <br/>
+<div id="flex-container">
+
+        <p class="opengraph"> Welcome to Tardigrade Trader, a cryptocurrency portfolio.
+        To get started, enter a ticker of a crypto in the search bar above.
+        You can add crypto that you are interested in to your portfolio to track.
+        I will be adding functionality to where after you login you can set a buy
+        and a sell price for the crypto youre interested in. Once the price is reached
+        Tardigrade trader will send you a text notifying you, what crypto and what price it has reached.</p>
+    <div>
+
+        <img src="{% static 'images/Home.png' %}" class="pic">
+
+    </div>
+</div>
+    <br/><br/>
+
+
 {% if ticker %}
     {{ ticker }}
 {% endif %}
@@ -25,7 +73,7 @@
 
     {% endif %}
 {% else %}
-    do something else
+
 {% endif %}
 
 </body>
