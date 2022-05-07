@@ -9,3 +9,4 @@ urlpatterns = [
     path('delete/<pk>', views.delete, name="delete"),
 
 ]
+#test
