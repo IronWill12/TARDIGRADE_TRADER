@@ -10,7 +10,7 @@
 # pip istalled EZGmail interface to easily work with Google API
 #pip installed google api 
 
-
+#credit for this code is not mine
 import ezgmail
 import re
 import csv
@@ -64,3 +64,4 @@ main_button = Button(window, text='Click to Start',command=parser)
 main_button.pack()
 
 window.mainloop()
+#class Koi PDX code guild
