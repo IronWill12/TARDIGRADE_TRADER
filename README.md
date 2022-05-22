@@ -5,7 +5,7 @@ Capstone project for PDX Codeguild
 
 ## Project Overview
 
-Buying and selling Crypto currency app. I will be building the app using the Crypto Compare API [Crypto Compare](https://min-api.cryptocompare.com/). The idea is to have a user be able to log in to their account, choose what Crypto they are interested in and set both a "sell price" and a "but price." Then the app will track the crypto with the API and when it hits eith price it sends a text message, with  [Twilio](https://www.twilio.com/) to the users phone telling them it has hit the price of the specified Crypto. The user should also be able to text back to the program telling it a specific buy or sale amount, **in USD,** and the app will make the purchase or sell. 
+Buying and selling Crypto currency app. I will be building the app using the Crypto Compare API [Crypto Compare](https://min-api.cryptocompare.com/). The idea is to have a user be able to log in to their account, choose what Crypto they are interested in and set both a "sell price" and a "buy price." Then the app will track the crypto with the API and when it hits eith price it sends a text message, with  [Twilio](https://www.twilio.com/) to the users phone telling them it has hit the price of the specified Crypto. The user should also be able to text back to the program telling it a specific buy or sale amount, **in USD,** and the app will make the purchase or sell. 
 
 ## Features
 
@@ -67,7 +67,7 @@ Data we will need to capture.
 - Multiple user functionality.
 - Deployment and hosting. <!-- I want this to be something that runs remotley and continuely not just until a text is sent.>
 
-# Really-great-to-haves
+# Really-really-great-to-haves
 - Ability to make sells and purchases.
 - Text back functionality, something like ***"okay"*** to acknowlege the messege or ***"pause"*** get it to stop sending for 24 hours.
 - link to Crypto accounts e.g. [Robin Hood] (https://robinhood.com/us/en/about/crypto/?utm_source=google&utm_campaign=13049048289&utm_content=crypto_119464199422&utm_term=520679377612__robinhood%20crypto&gclid=Cj0KCQiAxoiQBhCRARIsAPsvo-xb3T9Hx5Qqy0jLE1Jjt5lHQ9-4VBqb9ki5cl3U7sEQNb6rdOh_zcwaAiRzEALw_wcB)
