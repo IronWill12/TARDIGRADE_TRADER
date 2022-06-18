@@ -51,4 +51,3 @@ while len(population) < 1000:
 
     print(population)
     print(year)
-    

@@ -1,32 +1,106 @@
-# # Version 1
+def print_cards(cards, hidden):
+    s = ""
+    for card in cards:
+        s = s + "\t ________________"
+    if hidden:
+        s += "\t ________________"
+    print(s)
 
-nums = [5, 0, 8, 3, 4, 1, 6]
-sums = 0
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|                |"
+    print(s)
 
-for i in nums:
-    sums += i
+    s = ""
+    for card in cards:
+        if card.value == '10':
+            s = s + "\t|  {}            |".format(card.value)
+        else:
+            s = s + "\t|  {}             |".format(card.value)
+    if hidden:
+        s += "\t|                |"
+    print(s)
 
-print(nums)
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|      * *       |"
+    print(s)
 
-print(sums / len(nums))
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|    *     *     |"
+    print(s)
 
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|   *       *    |"
+    print(s)
 
-# Version2
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|   *       *    |"
+    print(s)
 
-nums = []
-user_input = ""
-sums = 0
+    s = ""
+    for card in cards:
+        s = s + "\t|       {}        |".format(card.suit)
+    if hidden:
+        s += "\t|          *     |"
+    print(s)
 
-while True:
-    user_input = input('Add a number to the list. Type done to calculate the average. ')
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|         *      |"
+    print(s)
 
-    if user_input == "done":    
-        for i in nums:
-            sums += i
-            
-        print("The average of all numbers is:")
-        print(sums / len(nums))
-        break
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|        *       |"
+    print(s)
 
-    nums.append(int(user_input))
-    print(nums)
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|                |"
+    print(s)
+
+    s = ""
+    for card in cards:
+        s = s + "\t|                |"
+    if hidden:
+        s += "\t|                |"
+    print(s)
+
+    s = ""
+    for card in cards:
+        if card.value == '10':
+            s = s + "\t|            {}  |".format(card.value)
+        else:
+            s = s + "\t|            {}   |".format(card.value)
+    if hidden:
+        s += "\t|        *       |"
+    print(s)
+
+    s = ""
+    for card in cards:
+        s = s + "\t|________________|"
+    if hidden:
+        s += "\t|________________|"
+    print(s)
+
+    print()
